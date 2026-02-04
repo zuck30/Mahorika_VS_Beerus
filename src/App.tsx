@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
 import BattleArena from './components/BattleArena';
-import BattleLog from './components/BattleLog';
 import Controls from './components/Controls';
+import BattleLog from './components/BattleLog';
 import RulesModal from './components/RulesModal';
 import GameOver from './components/GameOver';
 import { useGameLogic } from './hooks/useGameLogic';
+import './styles/App.css';
 
-function App() {
+const App: React.FC = () => {
   const [showRules, setShowRules] = useState(false);
   const {
     gameState,
@@ -21,13 +22,11 @@ function App() {
     <div className="app">
       <div className="jjk-glitch" />
       
-      <div className="game-container">
-        <Header />
+      <Header />
+
+      <main className="game-container">
         <BattleArena gameState={gameState} />
-        <BattleLog 
-          battleLog={gameState.battleLog} 
-          hakaiAttempts={gameState.hakaiAttempts} 
-        />
+        <BattleLog battleLog={gameState.battleLog} hakaiAttempts={gameState.hakaiAttempts} />
         <Controls
           executeHakai={executeHakai}
           accelerateAdaptation={accelerateAdaptation}
@@ -35,15 +34,10 @@ function App() {
           resetGame={resetGame}
           isGameOver={gameState.isGameOver}
         />
-      </div>
+      </main>
 
       <div className="rules-toggle">
-        <button 
-          className="rules-btn" 
-          onClick={() => setShowRules(true)}
-        >
-          ?
-        </button>
+        <button className="rules-btn" onClick={() => setShowRules(true)}>?</button>
       </div>
 
       <RulesModal show={showRules} onClose={() => setShowRules(false)} />
@@ -53,6 +47,6 @@ function App() {
       )}
     </div>
   );
-}
+};
 
 export default App;

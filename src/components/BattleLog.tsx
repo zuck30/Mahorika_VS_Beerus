@@ -14,15 +14,15 @@ const BattleLog: React.FC<BattleLogProps> = ({ battleLog, hakaiAttempts }) => {
   }, [battleLog]);
 
   return (
-    <div className="battle-log-container">
+    <div className="battle-log-wrapper">
       <div className="log-header">
-        <span>Infinite Void Transcript</span>
-        <span className="hakai-count">Erasure Attempts: {hakaiAttempts}</span>
+        <span className="log-title">Infinite Void Transcript</span>
+        <span>Erasure Attempts: {hakaiAttempts}</span>
       </div>
       <div className="battle-log">
         {battleLog.map((log) => (
-          <div key={log.id} className={`log-entry ${log.type}`}>
-             <span className="log-timestamp">[{new Date(log.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' })}]</span> {log.message}
+          <div key={log.id} className={`log-entry log-${log.type}`}>
+             <span style={{ opacity: 0.6 }}>[{new Date(log.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' })}]</span> {log.message}
           </div>
         ))}
         <div ref={logEndRef} />
