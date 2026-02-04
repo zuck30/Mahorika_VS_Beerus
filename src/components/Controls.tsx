@@ -16,21 +16,21 @@ const Controls: React.FC<ControlsProps> = ({
   isGameOver,
 }) => {
   return (
-    <div className="controls">
+    <div className="controls-container">
       {!isGameOver ? (
         <>
-          <button className="btn hakai-btn" onClick={executeHakai}>
+          <button className="jjk-btn hakai-btn" onClick={executeHakai}>
             HAKAI
           </button>
-          <button className="btn adapt-btn" onClick={accelerateAdaptation}>
+          <button className="jjk-btn adapt-btn" onClick={accelerateAdaptation}>
             Accelerate Adaptation
           </button>
-          <button className="btn sustain-btn" onClick={activateSustain}>
+          <button className="jjk-btn sustain-btn" onClick={activateSustain}>
             Sustain Flow
           </button>
         </>
       ) : (
-        <button className="btn reset-btn" onClick={resetGame}>
+        <button className="jjk-btn reset-btn" onClick={resetGame}>
           Restart Battle
         </button>
       )}
