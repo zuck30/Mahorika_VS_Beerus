@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
+import Header from './components/Header';
 import BattleArena from './components/BattleArena';
-import Controls from './components/Controls';
 import BattleLog from './components/BattleLog';
+import Controls from './components/Controls';
 import RulesModal from './components/RulesModal';
 import GameOver from './components/GameOver';
 import { useGameLogic } from './hooks/useGameLogic';
-import './styles/App.css';
 
-const App: React.FC = () => {
+function App() {
   const [showRules, setShowRules] = useState(false);
   const {
     gameState,
@@ -21,16 +21,13 @@ const App: React.FC = () => {
     <div className="app">
       <div className="jjk-glitch" />
       
-      <header className="jjk-header">
-        <div className="title-container">
-          <h1 className="main-title">BATTLE ENGINE</h1>
-          <div className="subtitle">JJK Mechanics vs God Force</div>
-        </div>
-      </header>
-
-      <main className="game-container">
+      <div className="game-container">
+        <Header />
         <BattleArena gameState={gameState} />
-        <BattleLog battleLog={gameState.battleLog} hakaiAttempts={gameState.hakaiAttempts} />
+        <BattleLog 
+          battleLog={gameState.battleLog} 
+          hakaiAttempts={gameState.hakaiAttempts} 
+        />
         <Controls
           executeHakai={executeHakai}
           accelerateAdaptation={accelerateAdaptation}
@@ -38,19 +35,24 @@ const App: React.FC = () => {
           resetGame={resetGame}
           isGameOver={gameState.isGameOver}
         />
-      </main>
-
-      <div className="rules-toggle">
-        <button className="rules-btn" onClick={() => setShowRules(true)}>?</button>
       </div>
 
-      {showRules && <RulesModal onClose={() => setShowRules(false)} />}
+      <div className="rules-toggle">
+        <button 
+          className="rules-btn" 
+          onClick={() => setShowRules(true)}
+        >
+          ?
+        </button>
+      </div>
+
+      <RulesModal show={showRules} onClose={() => setShowRules(false)} />
       
       {gameState.isGameOver && gameState.winner && (
         <GameOver winner={gameState.winner} onReset={resetGame} />
       )}
     </div>
   );
-};
+}
 
 export default App;
