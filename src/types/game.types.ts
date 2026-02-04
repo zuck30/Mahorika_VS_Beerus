@@ -8,6 +8,8 @@ export interface GameState {
   hakaiAttempts: number;
   isGameOver: boolean;
   winner: 'beerus' | 'mahoraga' | 'stalemate' | null;
+  isAdapting: boolean;
+  autoSustainUsed: boolean;
   battleLog: LogEntry[];
 }
 

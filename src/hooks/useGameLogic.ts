@@ -1,6 +1,13 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { GameState, LogEntry } from '../types/game.types';
-import { generateId, calculateDamage } from '../utils/game.utils';
+import { generateId } from '../utils/game.utils';
+
+const createLogEntry = (message: string, type: LogEntry['type']): LogEntry => ({
+  id: generateId(),
+  message,
+  type,
+  timestamp: Date.now(),
+});
 
 const initialState: GameState = {
   hakaiPower: 100,
@@ -12,126 +19,155 @@ const initialState: GameState = {
   hakaiAttempts: 0,
   isGameOver: false,
   winner: null,
+  isAdapting: false,
+  autoSustainUsed: false,
   battleLog: [
-    { id: generateId(), message: '[SYSTEM INITIALIZED] Domain established...', type: 'system', timestamp: Date.now() },
-    { id: generateId(), message: 'Beerus: "Hmph. Interesting constructs. Let\'s see how long you last."', type: 'beerus', timestamp: Date.now() },
-    { id: generateId(), message: 'Mahoraga\'s wheel begins turning... Analyzing phenomena...', type: 'mahoraga', timestamp: Date.now() },
-    { id: generateId(), message: 'Rika establishes infinite CE connection with Mahoraga', type: 'rika', timestamp: Date.now() },
+    { id: generateId(), message: '[DOMAIN EXPANSION: SYSTEM OVERRIDE] Battle begins...', type: 'system', timestamp: Date.now() },
+    { id: generateId(), message: 'Rules of the domain established. Adaptation vs Erasure.', type: 'system', timestamp: Date.now() },
   ],
 };
 
 export const useGameLogic = () => {
   const [gameState, setGameState] = useState<GameState>(initialState);
 
-  const addLogEntry = useCallback((message: string, type: LogEntry['type']) => {
-    setGameState(prev => ({
-      ...prev,
-      battleLog: [
-        { id: generateId(), message, type, timestamp: Date.now() },
-        ...prev.battleLog,
-      ].slice(0, 20),
-    }));
-  }, []);
+  // Adaptation Loop
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
 
-  const checkGameOver = useCallback((state: GameState) => {
-    if (state.mahoHealth <= 0) {
-      setGameState(prev => ({ ...prev, isGameOver: true, winner: 'beerus' }));
-      addLogEntry('Mahoraga has been erased from existence!', 'system');
-      return true;
+    if (gameState.isAdapting && !gameState.isGameOver) {
+      interval = setInterval(() => {
+        setGameState(prev => {
+          if (prev.isGameOver || !prev.isAdapting) return prev;
+
+          const increment = 5 + (prev.hakaiAttempts * 1.5);
+          const newAdaptation = Math.min(100, prev.adaptation + increment);
+
+          let nextState = {
+            ...prev,
+            adaptation: newAdaptation,
+            adaptationResistance: newAdaptation,
+            hakaiPower: Math.max(0, 100 - newAdaptation),
+          };
+
+          const newLogs: LogEntry[] = [...prev.battleLog];
+
+          if (newAdaptation >= 100) {
+            nextState = { ...nextState, isGameOver: true, winner: 'mahoraga', isAdapting: false };
+            newLogs.unshift(createLogEntry('ADAPTATION COMPLETE: Hakai phenomenon fully analyzed and invalidated.', 'mahoraga'));
+            newLogs.unshift(createLogEntry('System override achieved. Force has been rendered irrelevant.', 'system'));
+          } else if (Math.floor(newAdaptation / 25) > Math.floor(prev.adaptation / 25)) {
+            newLogs.unshift(createLogEntry(`Adaptation: ${Math.round(newAdaptation)}% - Hakai effectiveness decreasing.`, 'mahoraga'));
+          }
+
+          nextState.battleLog = newLogs.slice(0, 20);
+          return nextState;
+        });
+      }, 1000);
     }
-    
-    if (state.adaptation >= 100) {
-      setGameState(prev => ({ ...prev, isGameOver: true, winner: 'mahoraga' }));
-      addLogEntry('Mahoraga has fully adapted! Hakai is now irrelevant!', 'system');
-      return true;
-    }
-    
-    if (state.divineEnergy <= 0) {
-      setGameState(prev => ({ ...prev, isGameOver: true, winner: 'stalemate' }));
-      addLogEntry('Beerus has exhausted his divine energy! Stalemate!', 'system');
-      return true;
-    }
-    
-    return false;
-  }, [addLogEntry]);
+
+    return () => clearInterval(interval);
+  }, [gameState.isAdapting, gameState.isGameOver]);
 
   const executeHakai = useCallback(() => {
-    if (gameState.isGameOver) return;
-
     setGameState(prev => {
-      const adaptationResistance = prev.adaptation;
-      const damage = calculateDamage(25, adaptationResistance);
-      const hakaiEffectiveness = damage / 25;
-      
-      const newMahoHealth = Math.max(0, prev.mahoHealth - damage);
-      const newDivineEnergy = Math.max(0, prev.divineEnergy - 15);
-      const newHakaiAttempts = prev.hakaiAttempts + 1;
-      
-      const adaptationIncrease = 15 + (prev.hakaiAttempts * 2);
-      const newAdaptation = Math.min(100, prev.adaptation + adaptationIncrease);
-      const newAdaptationResistance = Math.min(100, prev.adaptationResistance + (adaptationIncrease * 0.7));
+      if (prev.isGameOver || prev.divineEnergy <= 0) return prev;
 
-      const newState = {
+      const newHakaiAttempts = prev.hakaiAttempts + 1;
+      const effectiveDamage = Math.max(10, prev.hakaiPower - prev.adaptationResistance);
+      const newMahoHealth = Math.max(0, prev.mahoHealth - effectiveDamage);
+      const newDivineEnergy = Math.max(0, prev.divineEnergy - 15);
+      const newHakaiPower = Math.max(0, 100 - prev.adaptationResistance);
+
+      const newLogs: LogEntry[] = [
+        createLogEntry(`Hakai #${newHakaiAttempts} executed! Divine energy unleashed.`, 'beerus'),
+        ...prev.battleLog,
+      ];
+
+      let newState: GameState = {
         ...prev,
-        hakaiPower: hakaiEffectiveness * 100,
-        divineEnergy: newDivineEnergy,
-        mahoHealth: newMahoHealth,
-        adaptation: newAdaptation,
-        adaptationResistance: newAdaptationResistance,
         hakaiAttempts: newHakaiAttempts,
+        mahoHealth: newMahoHealth,
+        divineEnergy: newDivineEnergy,
+        hakaiPower: newHakaiPower,
+        isAdapting: newHakaiAttempts === 1 ? true : prev.isAdapting,
+        battleLog: newLogs.slice(0, 20),
       };
 
-      addLogEntry(`Beerus uses Hakai! Effectiveness: ${(hakaiEffectiveness * 100).toFixed(1)}%`, 'beerus');
-      addLogEntry(`Mahoraga takes ${damage.toFixed(1)} damage. Adaptation +${adaptationIncrease}%`, 'mahoraga');
+      if (newMahoHealth <= 0) {
+        newState = { ...newState, isGameOver: true, winner: 'beerus' };
+        newState.battleLog = [
+            createLogEntry('Target erased from existence. Hakai successful.', 'beerus'),
+            ...newState.battleLog
+        ].slice(0, 20);
+      } else if (newDivineEnergy <= 0) {
+        newState = { ...newState, isGameOver: true, winner: 'stalemate' };
+        newState.battleLog = [
+            createLogEntry('Beerus divine energy depleted! Adaptation outlasts power.', 'system'),
+            ...newState.battleLog
+        ].slice(0, 20);
+      }
 
-      checkGameOver(newState);
       return newState;
     });
-  }, [gameState.isGameOver, addLogEntry, checkGameOver]);
+  }, []);
 
   const accelerateAdaptation = useCallback(() => {
-    if (gameState.isGameOver) return;
-
     setGameState(prev => {
-      const newAdaptation = Math.min(100, prev.adaptation + 10);
-      const newAdaptationResistance = Math.min(100, prev.adaptationResistance + 7);
-      const rikaCost = 5;
-      const newRikaEnergy = Math.max(0, prev.rikaEnergy - rikaCost);
+      if (prev.isGameOver || prev.adaptation >= 100) return prev;
 
-      addLogEntry(`Mahoraga focuses on adaptation... +10% progress`, 'mahoraga');
+      const newLogs: LogEntry[] = [...prev.battleLog];
 
-      return {
-        ...prev,
-        adaptation: newAdaptation,
-        adaptationResistance: newAdaptationResistance,
-        rikaEnergy: newRikaEnergy,
-      };
+      if (!prev.isAdapting) {
+        newLogs.unshift(createLogEntry('Manual adaptation acceleration initiated.', 'mahoraga'));
+        return { ...prev, isAdapting: true, battleLog: newLogs.slice(0, 20) };
+      } else {
+        const newAdaptation = Math.min(100, prev.adaptation + 20);
+        newLogs.unshift(createLogEntry('Adaptation accelerated! Wheel spinning faster...', 'mahoraga'));
+        return {
+          ...prev,
+          adaptation: newAdaptation,
+          adaptationResistance: newAdaptation,
+          hakaiPower: Math.max(0, 100 - newAdaptation),
+          battleLog: newLogs.slice(0, 20),
+        };
+      }
     });
-  }, [gameState.isGameOver, addLogEntry]);
+  }, []);
 
-  const activateSustain = useCallback(() => {
-    if (gameState.isGameOver) return;
-
+  const activateSustain = useCallback((auto = false) => {
     setGameState(prev => {
-      const healAmount = 30;
-      const newMahoHealth = Math.min(100, prev.mahoHealth + healAmount);
-      const sustainCost = 20;
-      const newRikaEnergy = Math.max(0, prev.rikaEnergy - sustainCost);
+      if (prev.isGameOver || prev.rikaEnergy <= 0) return prev;
 
-      addLogEntry(`Rika channels infinite CE! Mahoraga heals ${healAmount}%`, 'rika');
+      const newLogs: LogEntry[] = [...prev.battleLog];
+      if (!auto) {
+        newLogs.unshift(createLogEntry('Infinite CE channel activated! Sustaining Mahoraga...', 'rika'));
+      } else {
+        newLogs.unshift(createLogEntry('Auto-sustain triggered! Preventing deletion...', 'rika'));
+      }
+
+      const newMahoHealth = Math.min(100, prev.mahoHealth + 35);
+      const newRikaEnergy = Math.max(0, prev.rikaEnergy - 12);
 
       return {
         ...prev,
         mahoHealth: newMahoHealth,
         rikaEnergy: newRikaEnergy,
+        autoSustainUsed: auto ? true : prev.autoSustainUsed,
+        battleLog: newLogs.slice(0, 20),
       };
     });
-  }, [gameState.isGameOver, addLogEntry]);
+  }, []);
+
+  // Auto-sustain check
+  useEffect(() => {
+    if (gameState.mahoHealth < 30 && !gameState.autoSustainUsed && gameState.rikaEnergy > 0 && !gameState.isGameOver) {
+      activateSustain(true);
+    }
+  }, [gameState.mahoHealth, gameState.autoSustainUsed, gameState.rikaEnergy, gameState.isGameOver, activateSustain]);
 
   const resetGame = useCallback(() => {
     setGameState(initialState);
-    addLogEntry('Domain has been reset. Battle recommences!', 'system');
-  }, [addLogEntry]);
+  }, []);
 
   return {
     gameState,
