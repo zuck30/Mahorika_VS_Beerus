@@ -742,3 +742,26 @@
   position: fixed;
   z-index: 1000;
 }
+/* Add to your existing App.css */
+.rules-overlay.show {
+  display: flex !important;
+}
+/* Add these to your App.css */
+.game-over.show {
+  display: flex !important;
+}
+
+.victory-beerus .game-over-content {
+  border-color: var(--beerus-purple);
+  box-shadow: 0 0 50px var(--beerus-purple);
+}
+
+.victory-mahoraga .game-over-content {
+  border-color: var(--maho-white);
+  box-shadow: 0 0 50px var(--maho-white);
+}
+
+.victory-stalemate .game-over-content {
+  border-color: var(--jjk-cyan);
+  box-shadow: 0 0 50px var(--jjk-cyan);
+}
