@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Header from './components/Header';
 import BattleArena from './components/BattleArena';
 import Controls from './components/Controls';
 import BattleLog from './components/BattleLog';
@@ -21,12 +22,7 @@ const App: React.FC = () => {
     <div className="app">
       <div className="jjk-glitch" />
       
-      <header className="jjk-header">
-        <div className="title-container">
-          <h1 className="main-title">BATTLE ENGINE</h1>
-          <div className="subtitle">JJK Mechanics vs God Force</div>
-        </div>
-      </header>
+      <Header />
 
       <main className="game-container">
         <BattleArena gameState={gameState} />

@@ -60,8 +60,8 @@ export const useGameLogic = () => {
 
     setGameState(prev => {
       const adaptationResistance = prev.adaptation;
-      const hakaiEffectiveness = (100 - adaptationResistance) / 100;
-      const damage = 25 * hakaiEffectiveness;
+      const damage = calculateDamage(25, adaptationResistance);
+      const hakaiEffectiveness = damage / 25;
       
       const newMahoHealth = Math.max(0, prev.mahoHealth - damage);
       const newDivineEnergy = Math.max(0, prev.divineEnergy - 15);
