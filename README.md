@@ -1,46 +1,50 @@
-# Getting Started with Create React App
+# Mahoraga & Rika vs Lord Beerus: The Ultimate Adaptation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A JJK-themed battle simulation where the Eight-Handled Sword Divergent Sila Divine General Mahoraga, backed by the Queen of Curses Rika, faces off against the God of Destruction, Beerus.
 
-## Available Scripts
+## 🌌 The Premise
 
-In the project directory, you can run:
+Beerus has arrived to erase a "peculiar anomaly" in the Jujutsu world. Mahoraga, summoned and reinforced by Rika's infinite Cursed Energy, must adapt to the concept of Destruction itself before being completely erased.
 
-### `npm start`
+## ⚔️ Game Mechanics
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Beerus (God of Destruction)
+- **Divine Energy:** Beerus's "Health". If he exhausts his energy or is somehow overwhelmed, the battle ends.
+- **Hakai (Erasure):** Beerus's primary tool. It deals massive damage initially, but its effectiveness drops as Mahoraga adapts to the phenomenon.
+- **Hakai Attempts:** Every time Beerus uses Hakai, Mahoraga's wheel turns, accelerating his adaptation.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Mahoraga & Rika (The Zenin Trump Card)
+- **HP:** Mahoraga's physical integrity. If it reaches 0, he is erased.
+- **Adaptation Progress:** A percentage indicating how much Mahoraga has adapted to Beerus's techniques. At 100%, Mahoraga becomes immune to erasure.
+- **Sustain Flow:** Rika channels Cursed Energy to heal Mahoraga, allowing him to survive longer to complete his adaptation.
+- **Accelerate Adaptation:** Mahoraga focuses solely on the wheel, increasing adaptation progress at the cost of vulnerability.
 
-### `npm test`
+## 🚀 Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
 
-### `npm run build`
+### Installation
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Running the App
+```bash
+npm start
+```
+The application will be available at `http://localhost:3000`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠 Tech Stack
+- **React 18**
+- **TypeScript**
+- **CSS3** (with glitch effects and custom animations)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📜 Development Notes
+- Fixed missing component errors for `Header`, `BattleArena`, `BattleLog`, `Controls`, `RulesModal`, and `GameOver`.
+- Resolved ESLint warnings regarding template strings and unused variables.
+- Moved assets to `src/images` for proper Webpack bundling.
+- Added TypeScript declarations for image assets.
