@@ -55,8 +55,8 @@ Lord Beerus, the God of Destruction, detects a "peculiar anomaly" in the Jujutsu
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/mahoraga-vs-beerus.git
-   cd mahoraga-vs-beerus
+   git clone https://github.com/zuck30/Mahorika_VS_Beerus.git
+   cd Mahorika_VS_Beerus
    ```
 
 2. **Install Dependencies**
@@ -101,25 +101,7 @@ npm run dev
 ![Battle Arena](./Screenshots/shot1.png)
 *The main battle interface showing both combatants and their status*
 
-### Adaptation Wheel in Motion
-![Wheel Animation](./screenshots/wheel-animation.png)
-*Mahoraga's wheel turning as adaptation progresses*
-
-### Battle Controls
-![Control Panel](./screenshots/controls.png)
-*Interactive controls for managing the battle flow*
-
-### Battle Log
-![Battle Log](./screenshots/battle-log.png)
-*Real-time log of all battle events and actions*
-
 ## Features
-
-### Visual Effects
-- **Glitch Animations**: Representing Hakai's reality-breaking effects
-- **Wheel Rotation**: Smooth animation showing adaptation progress
-- **Energy Particles**: Visualizing cursed energy flow from Rika
-- **Destruction Effects**: Hakai's erasure visualization
 
 ### Game Mechanics
 - **Real-time Adaptation**: Dynamic adaptation based on Hakai usage
@@ -143,21 +125,6 @@ Optimized for all devices:
 - **Code Quality**: Resolved ESLint warnings and improved code structure
 - **Performance**: Optimized animations and state management
 
-### Project Structure
-```
-src/
-├── components/
-│   ├── BattleArena/     # Main battle visualization
-│   ├── BattleLog/       # Event logging system
-│   ├── Controls/        # User interaction panel
-│   ├── Header/          # Application header
-│   └── GameOver/        # Victory/Defeat screens
-├── images/              # Battle assets and sprites
-├── styles/              # CSS animations and effects
-└── types/               # TypeScript definitions
-```
-
-## Troubleshooting
 
 ### Common Issues
 
@@ -184,11 +151,6 @@ npx tsc --noEmit
 npm run build
 ```
 
-### Performance Tips
-- Use Chrome DevTools Performance tab to monitor animation performance
-- Reduce browser extensions that might interfere with canvas rendering
-- Ensure hardware acceleration is enabled in browser settings
-
 ## Future Enhancements
 
 ### Planned Features
@@ -197,6 +159,10 @@ npm run build
 - **Sound Effects**: Anime-accurate audio for attacks and abilities
 - **Save States**: Save and load battle progress
 - **Difficulty Levels**: Adjust battle speed and complexity
+- **Glitch Animations**: Representing Hakai's reality-breaking effects
+- **Wheel Rotation**: Smooth animation showing adaptation progress
+- **Energy Particles**: Visualizing cursed energy flow from Rika
+- **Destruction Effects**: Hakai's erasure visualization
 
 ### Technical Improvements
 - **WebGL Integration**: For more complex particle effects
@@ -217,7 +183,7 @@ We welcome contributions! Here's how you can help:
 ```bash
 # 1. Fork the repository
 # 2. Clone your fork
-git clone https://github.com/yourusername/mahoraga-vs-beerus.git
+git clone https://github.com/zuck30/Mahorika_VS_Beerus.git
 
 # 3. Create a feature branch
 git checkout -b feature/amazing-feature
@@ -233,7 +199,7 @@ git push origin feature/amazing-feature
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
@@ -247,7 +213,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 <p align="center">
     Enjoying the battle? Consider supporting the development!
     <br><br>
-    <a href="https://www.buymeacoffee.com/yourusername" target="_blank">
+    <a href="https://www.buymeacoffee.com/zuck30" target="_blank">
         <img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" height="40">
     </a>
 </p>
@@ -259,8 +225,6 @@ This project is a fan-made, non-commercial simulation created for entertainment 
 - Dragon Ball Super © Akira Toriyama / Bird Studio / Shueisha / Toei Animation
 
 No copyright infringement intended. This project is not affiliated with, endorsed by, or connected to the official creators or publishers.
-
----
 
 <p align="center">
     <b>Will adaptation triumph over destruction? The answer lies in your hands.</b>
