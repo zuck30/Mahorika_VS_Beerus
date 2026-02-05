@@ -1,4 +1,3 @@
-```markdown
 # Mahoraga & Rika vs Lord Beerus: The Ultimate Adaptation
 
 ![Battle Banner](https://capsule-render.vercel.app/api?type=venom&height=200&color=0:ff6b6b,100:4834d4&text=Adaptation%20vs%20Destruction&textBg=false&desc=(The%20Ultimate%20JJK%20x%20DBS%20Battle)&descAlign=79&fontAlign=50&descAlignY=70&fontColor=f7f5f5)
@@ -277,4 +276,3 @@ No copyright infringement intended. This project is not affiliated with, endorse
     <img src="https://img.shields.io/badge/Divine%20Energy-100%25-blue" alt="Divine Energy">
     <img src="https://img.shields.io/badge/Battle%20Status-Starting-yellow" alt="Status">
 </div>
-```
