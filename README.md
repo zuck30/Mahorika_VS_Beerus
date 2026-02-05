@@ -1,150 +1,280 @@
 ```markdown
 # Mahoraga & Rika vs Lord Beerus: The Ultimate Adaptation
 
-![Banner](https://capsule-render.vercel.app/api?type=venom&height=220&color=0:8b0000,100:4b0082&text=Mahoraga%20%26%20Rika%20vs%20Beerus&textBg=false&desc=The%20Ultimate%20Jujutsu%20x%20Dragon%20Ball%20Adaptation%20Battle&descAlign=62&fontAlign=50&descAlignY=68&fontColor=f0f0f0&animation=twinkling)
+![Battle Banner](https://capsule-render.vercel.app/api?type=venom&height=200&color=0:ff6b6b,100:4834d4&text=Adaptation%20vs%20Destruction&textBg=false&desc=(The%20Ultimate%20JJK%20x%20DBS%20Battle)&descAlign=79&fontAlign=50&descAlignY=70&fontColor=f7f5f5)
 
-<p align="center">
-  <strong>A Jujutsu Kaisen-themed interactive battle simulation</strong><br>
-  Mahoraga (backed by Rika's infinite cursed energy) must adapt to the God of Destruction Beerus and his Hakai... or be erased forever.
-</p>
+<p align="center">A cosmic battle simulation where Mahoraga's infinite adaptation faces Beerus's ultimate destruction. Can adaptation overcome erasure itself?</p>
 
-<div align="center">
-  ![React](https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react)
-  ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-  ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3)
-  ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
-</div>
+![React](https://img.shields.io/badge/React-18.2.0-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.0.0-3178C6) ![CSS3](https://img.shields.io/badge/CSS3-Advanced-purple) ![Node.js](https://img.shields.io/badge/Node.js-16+-green)
 
-<br>
-
-<h3>Quick Links</h3>
+## Quick Links
 
 <div align="left">
-  <a href="https://github.com/YOUR_USERNAME/mahoraga-vs-beerus">
-    <img src="https://img.shields.io/badge/Repository-181717?style=flat-square&logo=github&logoColor=white" alt="Repository">
-  </a>
-  <!-- Uncomment if you want contact badge -->
-  <!-- <a href="mailto:your@email.com"><img src="https://img.shields.io/badge/Contact%20Me-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Contact"></a> -->
+    <a href="https://github.com/yourusername/mahoraga-vs-beerus"><img src="https://img.shields.io/badge/Repository-30302f?style=flat-square&logo=github" alt="GitHub Repository"></a>
+    <a href="#demo"><img src="https://img.shields.io/badge/Live%20Demo-30302f?style=flat-square&logo=vercel" alt="Live Demo"></a>
 </div>
 
 <br>
 
-<ul>
-  <li>⚔️ Real-time adaptation to Hakai</li>
-  <li>🌌 Rika sustains Mahoraga with infinite cursed energy</li>
-  <li>🌀 Wheel-turning adaptation mechanic with dramatic visuals</li>
-  <li>💥 Anime-style UI with glitch effects, cursed energy pulses & destruction animations</li>
-</ul>
+- ⚔️ Experience the ultimate crossover battle between Jujutsu Kaisen and Dragon Ball Super
+- 🎮 Interactive battle simulation with real-time mechanics
+- 🌀 Watch Mahoraga adapt to Hakai in real-time with visual wheel animations
+- 💀 Witness Beerus's frustration as his erasure power becomes ineffective
 
-<h2 id="tech-stack">Tech Stack</h2>
+## Tech Stack
 
-**Frontend**  
-![Frontend Skills](https://skillicons.dev/icons?i=react,typescript,vite,html,css&perline=8)
+**Frontend**
+![My Skills](https://skillicons.dev/icons?i=react,typescript,html,css&perline=10)
 
-**Tools & Platforms**  
-![Tools](https://skillicons.dev/icons?i=github,vscode,npm&perline=8)
+**Runtime & Tools**
+![My Skills](https://skillicons.dev/icons?i=nodejs,vite,github,vscode&perline=10)
 
-<h2>Quick Start</h2>
+**Animations**
+![CSS3](https://img.shields.io/badge/Custom%20Animations-CSS3%20%2B%20Keyframes-purple)
+
+## The Premise
+
+Lord Beerus, the God of Destruction, detects a "peculiar anomaly" in the Jujutsu Kaisen universe - an entity capable of adapting to any and all phenomena. Intrigued and threatened, Beerus arrives to erase this anomaly. Meanwhile, Mahoraga, the Eight-Handled Sword Divergent Sila Divine General, is summoned and reinforced by Rika's infinite Cursed Energy. The stage is set for a battle that questions the very concepts of destruction and adaptation.
+
+## Battle Mechanics
+
+### Beerus (God of Destruction)
+- **Divine Energy Pool**: Beerus's life force. If depleted or overwhelmed, the battle ends.
+- **Hakai (Erasure)**: Beerus's ultimate technique that erases targets from existence. Effectiveness decreases as Mahoraga adapts.
+- **Destruction Meter**: Each Hakai attempt accelerates Mahoraga's adaptation through the wheel's rotation.
+
+### Mahoraga & Rika (The Adaptation Duo)
+- **Physical Integrity (HP)**: Mahoraga's existence stability. Reaching 0 means complete erasure.
+- **Adaptation Progress**: Percentage tracking adaptation to Hakai. At 100%, Mahoraga becomes immune to erasure.
+- **Cursed Energy Flow**: Rika channels infinite energy to sustain Mahoraga, healing damage over time.
+- **Adaptation Focus**: Mahoraga can prioritize wheel rotation over defense, increasing vulnerability for faster adaptation.
+
+## Quick Start
 
 ### Prerequisites
-- Node.js 16 or higher
-- npm or yarn
+- Node.js (v16 or higher)
+- npm or yarn package manager
 
-### Installation
+### Installation & Setup
 
-1. Clone the repository
+1. **Clone the Repository**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/mahoraga-vs-beerus.git
+   git clone https://github.com/yourusername/mahoraga-vs-beerus.git
    cd mahoraga-vs-beerus
    ```
 
-2. Install dependencies
+2. **Install Dependencies**
    ```bash
    npm install
    # or
    yarn install
    ```
 
-3. Start the development server
+3. **Run the Application**
    ```bash
    npm start
    # or
    yarn start
    ```
 
-   → Open [http://localhost:3000](http://localhost:3000) in your browser
+4. **Open Your Browser**
+   Navigate to `http://localhost:3000` to begin the battle!
 
-<h2>Screenshots</h2>
+### Alternative Setup with Vite
+If you prefer Vite for faster development:
+```bash
+npm run dev
+# The application will be available at `http://localhost:5173`
+```
+
+## How to Play
+
+1. **Start the Battle**: Click "Begin Battle" to initialize the confrontation
+2. **Observe Mechanics**: Watch as Beerus uses Hakai and Mahoraga's wheel turns
+3. **Control Adaptation**: Use the control panel to:
+   - Sustain Mahoraga with Rika's energy
+   - Accelerate adaptation (but become more vulnerable)
+   - Monitor adaptation progress and health
+4. **Victory Conditions**:
+   - Mahoraga wins if adaptation reaches 100%
+   - Beerus wins if Mahoraga's HP reaches 0
+
+## Application Screenshots
 
 ### Battle Arena
-![Battle Arena](./screenshots/battle-arena.png)
+![Battle Arena](./Screenshots/shot1.png)
+*The main battle interface showing both combatants and their status*
 
-### Adaptation Progress
-![Adaptation Progress](./screenshots/adaptation.png)
+### Adaptation Wheel in Motion
+![Wheel Animation](./screenshots/wheel-animation.png)
+*Mahoraga's wheel turning as adaptation progresses*
 
-### Hakai Moment
-![Hakai Moment](./screenshots/hakai.png)
+### Battle Controls
+![Control Panel](./screenshots/controls.png)
+*Interactive controls for managing the battle flow*
 
-### Victory / Game Over
-![Game Over](./screenshots/gameover.png)
+### Battle Log
+![Battle Log](./screenshots/battle-log.png)
+*Real-time log of all battle events and actions*
 
-<!-- Add more screenshots as you create them -->
+## Features
 
-<h2>Gameplay Overview</h2>
+### Visual Effects
+- **Glitch Animations**: Representing Hakai's reality-breaking effects
+- **Wheel Rotation**: Smooth animation showing adaptation progress
+- **Energy Particles**: Visualizing cursed energy flow from Rika
+- **Destruction Effects**: Hakai's erasure visualization
 
-### Beerus (God of Destruction)
-- **Divine Energy** — his remaining power / "health"
-- **Hakai** — erasure attack (initially devastating, weakens as adaptation grows)
-- Each Hakai usage forces Mahoraga's wheel to turn faster
+### Game Mechanics
+- **Real-time Adaptation**: Dynamic adaptation based on Hakai usage
+- **Strategic Choices**: Balance between healing and adaptation speed
+- **Progressive Difficulty**: Hakai effectiveness decreases over time
+- **Battle Logging**: Complete history of all battle events
 
-### Mahoraga & Rika
-- **HP** — Mahoraga's physical form integrity
-- **Adaptation %** — 0 → 100% (100% = complete immunity to Hakai)
-- **Sustain Flow** — Rika channels cursed energy to heal / keep Mahoraga alive
-- **Accelerate Adaptation** — Focus mode: faster progress, but much more vulnerable
+### Responsive Design
+Optimized for all devices:
+- Mobile (320px+)
+- Tablet (768px+)
+- Desktop (1024px+)
+- Large screens (1200px+)
 
-<h2>Features</h2>
-- Real-time adaptation progress visualization
-- Dramatic wheel spin & cursed energy effects
-- Hakai visual & sound feedback (planned)
-- Rules & controls modal
-- Game over / victory screens with stats
-- Glitch + anime-inspired styling
+## Development Notes
 
-<h2>Development Notes</h2>
-- Fixed missing component imports (`Header`, `BattleArena`, `BattleLog`, `Controls`, `RulesModal`, `GameOver`)
-- Resolved ESLint warnings (template strings, unused variables)
-- Moved assets to `src/images/` for proper bundling
-- Added TypeScript image declarations (`*.png`, `*.jpg`, etc.)
+### Recent Improvements
+- **Fixed Component Errors**: Resolved missing component imports for all battle elements
+- **TypeScript Integration**: Full type safety with proper interfaces
+- **Asset Management**: Optimized image loading with proper Webpack configuration
+- **Code Quality**: Resolved ESLint warnings and improved code structure
+- **Performance**: Optimized animations and state management
 
-<h2>TODO / Planned</h2>
-- Sound effects (Hakai scream, wheel spin, Rika summon roar)
-- Difficulty modes (Beerus aggression levels)
-- Mobile-responsive controls
-- Share result feature (adaptation time, damage taken, screenshots)
-- Enhanced cursed energy + destruction particle effects
-- Better Hakai visual sequence
+### Project Structure
+```
+src/
+├── components/
+│   ├── BattleArena/     # Main battle visualization
+│   ├── BattleLog/       # Event logging system
+│   ├── Controls/        # User interaction panel
+│   ├── Header/          # Application header
+│   └── GameOver/        # Victory/Defeat screens
+├── images/              # Battle assets and sprites
+├── styles/              # CSS animations and effects
+└── types/               # TypeScript definitions
+```
 
-<h2>Contributing</h2>
-Pull requests are welcome!  
-Especially interested in:
-- Animation improvements
-- Balance suggestions
-- New visual effects
-- Sound implementation ideas
+## Troubleshooting
 
-<h2>License</h2>
-MIT License — see the [LICENSE](LICENSE) file for details.
+### Common Issues
+
+**Port Already in Use**
+```bash
+# Kill process on port 3000
+npx kill-port 3000
+# Restart the application
+npm start
+```
+
+**Missing Dependencies**
+```bash
+# Clear node_modules and reinstall
+rm -rf node_modules package-lock.json
+npm install
+```
+
+**TypeScript Errors**
+```bash
+# Check TypeScript compilation
+npx tsc --noEmit
+# Or rebuild types
+npm run build
+```
+
+### Performance Tips
+- Use Chrome DevTools Performance tab to monitor animation performance
+- Reduce browser extensions that might interfere with canvas rendering
+- Ensure hardware acceleration is enabled in browser settings
+
+## Future Enhancements
+
+### Planned Features
+- **Additional Characters**: Sukuna, Gojo, and other DBS gods
+- **Multi-phase Battles**: Beerus using more destruction techniques
+- **Sound Effects**: Anime-accurate audio for attacks and abilities
+- **Save States**: Save and load battle progress
+- **Difficulty Levels**: Adjust battle speed and complexity
+
+### Technical Improvements
+- **WebGL Integration**: For more complex particle effects
+- **WebSocket Support**: Multiplayer battle mode
+- **Progressive Web App**: Offline capability and installation
+- **Analytics**: Track battle statistics and outcomes
+
+## Contributing
+
+We welcome contributions! Here's how you can help:
+
+1. **Report Bugs**: Open an issue with detailed reproduction steps
+2. **Suggest Features**: Share your ideas for new mechanics or characters
+3. **Submit Pull Requests**: Follow our coding standards and include tests
+4. **Improve Documentation**: Help make this README even better!
+
+### Development Workflow
+```bash
+# 1. Fork the repository
+# 2. Clone your fork
+git clone https://github.com/yourusername/mahoraga-vs-beerus.git
+
+# 3. Create a feature branch
+git checkout -b feature/amazing-feature
+
+# 4. Make your changes and commit
+git commit -m 'Add amazing feature'
+
+# 5. Push to your fork
+git push origin feature/amazing-feature
+
+# 6. Open a Pull Request
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- **Gege Akutami** for creating Jujutsu Kaisen and Mahoraga
+- **Akira Toriyama** for creating Dragon Ball Super and Beerus
+- **All Contributors** who have helped improve this project
+- **The Anime Community** for endless inspiration
+
+## Support the Project
+
+<p align="center">
+    Enjoying the battle? Consider supporting the development!
+    <br><br>
+    <a href="https://www.buymeacoffee.com/yourusername" target="_blank">
+        <img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" height="40">
+    </a>
+</p>
+
+## Disclaimer
+
+This project is a fan-made, non-commercial simulation created for entertainment and educational purposes. All characters and concepts belong to their respective copyright holders:
+- Jujutsu Kaisen © Gege Akutami / Shueisha
+- Dragon Ball Super © Akira Toriyama / Bird Studio / Shueisha / Toei Animation
+
+No copyright infringement intended. This project is not affiliated with, endorsed by, or connected to the official creators or publishers.
 
 ---
 
-**With this much cursed energy... even a God of Destruction might have to take a nap.**
+<p align="center">
+    <b>Will adaptation triumph over destruction? The answer lies in your hands.</b>
+    <br>
+    <i>Start the battle and witness cosmic power clash!</i>
+</p>
 
-Enjoy the battle!
+<div align="center">
+    <img src="https://img.shields.io/badge/Adaptation%20Progress-0%25-red" alt="Adaptation">
+    <img src="https://img.shields.io/badge/Divine%20Energy-100%25-blue" alt="Divine Energy">
+    <img src="https://img.shields.io/badge/Battle%20Status-Starting-yellow" alt="Status">
+</div>
 ```
-
-Replace `YOUR_USERNAME` with your actual GitHub username.
-
-This version keeps everything properly formatted in valid markdown — no flat text blocks, consistent headers, proper spacing, centered elements where it makes sense, and shields/skillicons for visual polish — just like the Aurafy example.
-
-Let me know if you want to tweak the colors, banner animation, add more badges, or change anything else!
