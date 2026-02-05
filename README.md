@@ -28,9 +28,6 @@
 **Runtime & Tools**
 ![My Skills](https://skillicons.dev/icons?i=nodejs,vite,github,vscode&perline=10)
 
-**Animations**
-![CSS3](https://img.shields.io/badge/Custom%20Animations-CSS3%20%2B%20Keyframes-purple)
-
 ## The Premise
 
 Lord Beerus, the God of Destruction, detects a "peculiar anomaly" in the Jujutsu Kaisen universe - an entity capable of adapting to any and all phenomena. Intrigued and threatened, Beerus arrives to erase this anomaly. Meanwhile, Mahoraga, the Eight-Handled Sword Divergent Sila Divine General, is summoned and reinforced by Rika's infinite Cursed Energy. The stage is set for a battle that questions the very concepts of destruction and adaptation.
