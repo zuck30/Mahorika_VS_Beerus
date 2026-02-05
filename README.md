@@ -9,7 +9,7 @@
 ## Quick Links
 
 <div align="left">
-    <a href="https://github.com/yourusername/mahoraga-vs-beerus"><img src="https://img.shields.io/badge/Repository-30302f?style=flat-square&logo=github" alt="GitHub Repository"></a>
+    <a href="https://github.com/zuck30/Mahorika_VS_Beerus"><img src="https://img.shields.io/badge/Repository-30302f?style=flat-square&logo=github" alt="GitHub Repository"></a>
     <a href="#demo"><img src="https://img.shields.io/badge/Live%20Demo-30302f?style=flat-square&logo=vercel" alt="Live Demo"></a>
 </div>
 
